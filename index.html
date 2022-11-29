@@ -1,0 +1,109 @@
+<head>
+
+  <style>
+    body {
+  background-color: floralwhite;
+}
+
+label {
+  font-family: Georgia;
+  font-size: 35px;
+  color: darkblue;
+}
+
+#namn {
+  height: 30px;
+}
+
+
+.top {
+  margin-top: 50px;
+}
+
+#press {
+  color: white;
+  background-color: seagreen;
+}
+
+.middle {
+  display: flex;
+  justify-content: center;
+  
+  
+}
+.welcome {
+  display: inline;
+  
+  
+}
+
+h2 {
+  font-family: Georgia;
+  color: darkblue;
+  letter-spacing: 3px;
+}
+
+#namntext {
+  color: seagreen;
+  letter-spacing: 3px;
+  font-family: Georgia;
+}
+
+#night {
+  margin-top: 100px;
+  height: 100px;
+  width: 500px;
+  font-size: 50px;
+  font-family: cursive;
+  color: darkblue;
+background-color: slategrey;
+}
+
+button:hover {
+  cursor: pointer;
+  
+}
+  </style>
+</head>
+
+<body>
+  <div class="top">
+  <label>Fyll i ditt namn!</label>
+  <input type="text" id="namn" onfocus="this.value=''"></input>
+  <button id="press" type="submit" onclick="secondFunc()">Skicka</button>
+        
+        </div>
+
+<div class="welcome">
+  <h2>Välkommen <span id="namntext"></span></h2>
+</div>
+  
+  
+  <div class="middle">
+  <button id="night" class="light" onclick="myFunction('black', 'white')">God natt!</button>
+  </div>
+<script>
+  
+  let knapp = document.getElementById("night");
+  
+function myFunction(color1, color2) {
+    if (knapp.innerHTML === "God natt!") {
+     document.body.style.background = color1;
+     
+      knapp.innerHTML = "God morgon!";
+    } else {
+      document.body.style.background = color2;
+      knapp.innerHTML = "God natt!";
+    }
+     
+  
+   }
+  
+  
+function secondFunc() {
+  let namn = document.getElementById("namn").value;
+   document.getElementById("namntext").innerHTML = namn;
+ }
+ 
+  </script>
+</body>
